@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "${DATABASE_URL}"
+    username: "${DATABASE_USERNAME}"
+    password: "${DATABASE_PASSWORD}"
+  liquibase:
+    change-log: /db/changelog/db.changelog-master.yaml
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+application:
+  security:
+    jwt:
+      secret: "92f240713ebdcd0a73e197c589bd5319b505326936bd6f219face75203cdabe1"
+      expiration: 86400000
